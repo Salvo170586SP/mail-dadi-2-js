@@ -32,7 +32,7 @@ button.addEventListener('click', function () {
     const inputEmail = document.getElementById('email').value;
     const formInput = document.getElementById('form');
     const subtitile = document.getElementById('subtitle');
-  
+
     //se la mail non esiste nascondo la card
     if (!inputEmail) {
         placeholder.innerHTML = ''; A
@@ -81,11 +81,7 @@ button.addEventListener('click', function () {
         };
 
         function getImage(num) {
-            let svg;
-            for (let num in imgs) {
-                svg = `<img src="imgs/${num}.svg" alt="${num}">`;
-            }
-            return svg;
+            return `<img src="imgs/${num}.svg" alt="${num}">`;
         }
 
         function randomNumber() {
@@ -110,7 +106,7 @@ button.addEventListener('click', function () {
             result = 'Hai perso <i class="fa-solid fa-face-frown"></i>';
         }
 
-        placeholderResult.innerHTML = result;  
+        placeholderResult.innerHTML = result;
     });
 
 
