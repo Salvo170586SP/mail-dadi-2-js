@@ -2,6 +2,24 @@
     height: 150px;
     width: 150px;
 }
-.card{
-    height: 330px;
+.game-card{
+    height: 390px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    box-shadow: grey 0 0 20px -5px;
+    margin: 10px 0;
 }
+
+.dadi-card{
+    height: 210px;
+    margin: 20px 0;
+
+}
+
+h2{
+    padding: 10px;
+ }
+
+ img{
+    filter: drop-shadow(1px 3px 3px black);
+ }

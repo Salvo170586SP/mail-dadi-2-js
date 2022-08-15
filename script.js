@@ -8,7 +8,7 @@ Mostrare i risultati prima in console poi a schermo
 
 const placeholder = document.querySelector('p');
 const button = document.querySelector('button');
-const card = document.querySelector('.card');
+const card = document.querySelector('.game-card');
 
 /* const emails = ['marco@libero.it', 'francesco@libero.it', 'luca@libero.it', 'salvo@libero.it', 'fabio@libero.it', 'matteo@libero.it'];
  */
