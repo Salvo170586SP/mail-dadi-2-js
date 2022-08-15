@@ -24,10 +24,9 @@ const emails = [
 
 
 
+////////// LOGIN //////////
 
 button.addEventListener('click', function () {
-
-    ////////// LOGIN //////////
 
     const inputEmail = document.getElementById('email').value;
     const formInput = document.getElementById('form');
@@ -35,7 +34,7 @@ button.addEventListener('click', function () {
 
     //se la mail non esiste nascondo la card
     if (!inputEmail) {
-        placeholder.innerHTML = ''; A
+        placeholder.innerHTML = ''; 
         card.classList.add('d-none');
         return
     }
@@ -48,7 +47,7 @@ button.addEventListener('click', function () {
 
         for (let mail in user) {
 
-            //se l'email è registrata mostro il messaggio di benvenuto, nascondi il form, l'il sottotitolo e mostro la card per tirare i dadi
+            //se l'email è registrata mostro il messaggio di benvenuto, nascondi il form, il sottotitolo e mostro la card per tirare i dadi
             if (user[mail].includes(inputEmail)) {
                 message = `Benvenuto ${user['name']}, puoi tirare i dadi <i class="fa-solid fa-face-grin-wink"></i>`;
                 card.classList.remove('d-none');
@@ -60,10 +59,11 @@ button.addEventListener('click', function () {
 
     placeholder.innerHTML = message;
 
+
+
     ///////// GAME ///////////
 
     const goButton = document.getElementById('go');
-
 
     goButton.addEventListener('click', function () {
 
@@ -86,8 +86,7 @@ button.addEventListener('click', function () {
         cpu.innerHTML = getImage(cpuNumber);
         user.innerHTML = getImage(userNumber);
 
-        let result = 'Avete pareggiato ';
-
+        let result = 'Avete pareggiato';
         if (cpuNumber < userNumber) {
             result = 'Hai vinto <i class="fa-solid fa-face-grin-wide me-1"></i> <i class="fa-solid fa-trophy"></i>';
             confetti({
