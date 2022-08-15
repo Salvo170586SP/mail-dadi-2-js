@@ -71,14 +71,6 @@ button.addEventListener('click', function () {
         const user = document.getElementById('user');
         const placeholderResult = document.getElementById('placeholder-result');
 
-        const imgs = {
-            1: '1.svg',
-            2: '2.svg',
-            3: '3.svg',
-            4: '4.svg',
-            5: '5.svg',
-            6: '6.svg'
-        };
 
         function getImage(num) {
             return `<img src="imgs/${num}.svg" alt="${num}">`;
