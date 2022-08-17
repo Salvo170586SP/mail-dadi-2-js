@@ -9,6 +9,9 @@ Mostrare i risultati prima in console poi a schermo
 const placeholder = document.querySelector('p');
 const button = document.querySelector('button');
 const card = document.querySelector('.game-card');
+const resetButton = document.getElementById('reset');
+const subtitle = document.getElementById('subtitle');
+
 
 /* const emails = ['marco@libero.it', 'francesco@libero.it', 'luca@libero.it', 'salvo@libero.it', 'fabio@libero.it', 'matteo@libero.it'];
  */
@@ -23,46 +26,61 @@ const emails = [
 ]
 
 
+const inputEmail = document.getElementById('email');
+const formInput = document.getElementById('form');
+
+
+/////////////////RESET//////////////////
+resetButton.addEventListener('click', function () {
+    //se clicco reset tolgo la card, tolgo il reset, tolgo il placeholder mostro i campi di inserimento della mail e ripristino il sottotitolo iniziale
+    card.classList.add('d-none');
+    resetButton.classList.add('d-none');
+    formInput.classList.remove('d-none');
+    subtitle.classList.remove('d-none');
+    inputEmail.value = '';
+    placeholder.innerHTML = ''
+});
 
 ////////// LOGIN //////////
-
 button.addEventListener('click', function () {
 
-    const inputEmail = document.getElementById('email').value;
-    const formInput = document.getElementById('form');
-    const subtitile = document.getElementById('subtitle');
-
+    
     //se la mail non esiste nascondo la card
-    if (!inputEmail) {
-        placeholder.innerHTML = ''; 
+    if (!inputEmail.value) {
+        placeholder.innerHTML = '';
         card.classList.add('d-none');
         return
     }
-
-
+    
     let message = 'non sei registrato';
-
     for (let i = 0; i < emails.length; i++) {
         const user = emails[i];
-
+        
         for (let mail in user) {
 
             //se l'email è registrata mostro il messaggio di benvenuto, nascondi il form, il sottotitolo e mostro la card per tirare i dadi
-            if (user[mail].includes(inputEmail)) {
+            if (user[mail].includes(inputEmail.value)) {
                 message = `Benvenuto ${user['name']}, puoi tirare i dadi <i class="fa-solid fa-face-grin-wink"></i>`;
                 card.classList.remove('d-none');
                 formInput.classList.add('d-none');
-                subtitile.classList.add('d-none');
+                subtitle.classList.add('d-none');
+                resetButton.classList.remove('d-none');
+
             }
+
+
+
+
+
         }
     }
-
     placeholder.innerHTML = message;
 
 
 
-    ///////// GAME ///////////
 
+
+    ///////// GAME ///////////
     const goButton = document.getElementById('go');
 
     goButton.addEventListener('click', function () {
